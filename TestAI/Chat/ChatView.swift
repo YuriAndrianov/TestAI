@@ -16,9 +16,17 @@ struct ChatView: View {
         NavigationView {
             VStack {
                 ScrollMessageView(messages: $viewModel.messages)
-                InputView(enteredText: $enteredText) {
-                    viewModel.send(text: enteredText)
+                InputView(
+                    enteredText: $enteredText,
+                    textFieldPlaceholder: "Enter message...",
+                    buttonTitle: "Send"
+                ) {
+                    let message = enteredText
                     enteredText = ""
+                    
+                    Task {
+                        await viewModel.send(message: message)
+                    }
                 }
             }
             .navigationTitle("ChatGPT")
@@ -80,23 +88,26 @@ private struct MessageView: View {
     }
 }
 
-private struct InputView: View {
+struct InputView: View {
     @Binding var enteredText: String
     
+    let textFieldPlaceholder: String
+    let buttonTitle: String
     let buttonAction: () -> Void
     
     var body: some View {
         HStack {
             TextField(text: $enteredText) {
-                Text("Enter message...")
+                Text(textFieldPlaceholder)
             }
             .textFieldStyle(.roundedBorder)
             Button {
                 buttonAction()
             } label: {
-                Text("Send")
+                Text(buttonTitle)
             }
             .disabled(enteredText.isEmpty)
+            .buttonStyle(.bordered)
         }
         .padding()
     }

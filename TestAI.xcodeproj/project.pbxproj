@@ -8,17 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		E22301D729732DAD0078B2A4 /* TestAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22301D629732DAD0078B2A4 /* TestAIApp.swift */; };
-		E22301D929732DAD0078B2A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22301D829732DAD0078B2A4 /* ContentView.swift */; };
+		E22301D929732DAD0078B2A4 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22301D829732DAD0078B2A4 /* ChatView.swift */; };
 		E22301DB29732DAF0078B2A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E22301DA29732DAF0078B2A4 /* Assets.xcassets */; };
 		E22301DE29732DAF0078B2A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E22301DD29732DAF0078B2A4 /* Preview Assets.xcassets */; };
+		E22301E529732DC70078B2A4 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22301E429732DC70078B2A4 /* ChatViewModel.swift */; };
+		E22301E729732DD90078B2A4 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22301E629732DD90078B2A4 /* ChatService.swift */; };
+		E22301EA29732ECD0078B2A4 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = E22301E929732ECD0078B2A4 /* OpenAISwift */; };
+		E22301EC297345EA0078B2A4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22301EB297345EA0078B2A4 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E22301D329732DAD0078B2A4 /* TestAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22301D629732DAD0078B2A4 /* TestAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAIApp.swift; sourceTree = "<group>"; };
-		E22301D829732DAD0078B2A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E22301D829732DAD0078B2A4 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		E22301DA29732DAF0078B2A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E22301DD29732DAF0078B2A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E22301E429732DC70078B2A4 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		E22301E629732DD90078B2A4 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		E22301EB297345EA0078B2A4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E22301EA29732ECD0078B2A4 /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +60,10 @@
 			isa = PBXGroup;
 			children = (
 				E22301D629732DAD0078B2A4 /* TestAIApp.swift */,
-				E22301D829732DAD0078B2A4 /* ContentView.swift */,
+				E22301E629732DD90078B2A4 /* ChatService.swift */,
+				E22301E429732DC70078B2A4 /* ChatViewModel.swift */,
+				E22301D829732DAD0078B2A4 /* ChatView.swift */,
+				E22301EB297345EA0078B2A4 /* Message.swift */,
 				E22301DA29732DAF0078B2A4 /* Assets.xcassets */,
 				E22301DC29732DAF0078B2A4 /* Preview Content */,
 			);
@@ -83,6 +94,9 @@
 			dependencies = (
 			);
 			name = TestAI;
+			packageProductDependencies = (
+				E22301E929732ECD0078B2A4 /* OpenAISwift */,
+			);
 			productName = TestAI;
 			productReference = E22301D329732DAD0078B2A4 /* TestAI.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,9 @@
 				Base,
 			);
 			mainGroup = E22301CA29732DAD0078B2A4;
+			packageReferences = (
+				E22301E829732ECD0078B2A4 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = E22301D429732DAD0078B2A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E22301D929732DAD0078B2A4 /* ContentView.swift in Sources */,
+				E22301D929732DAD0078B2A4 /* ChatView.swift in Sources */,
+				E22301E729732DD90078B2A4 /* ChatService.swift in Sources */,
+				E22301EC297345EA0078B2A4 /* Message.swift in Sources */,
+				E22301E529732DC70078B2A4 /* ChatViewModel.swift in Sources */,
 				E22301D729732DAD0078B2A4 /* TestAIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +359,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E22301E829732ECD0078B2A4 /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E22301E929732ECD0078B2A4 /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E22301E829732ECD0078B2A4 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E22301CB29732DAD0078B2A4 /* Project object */;
 }

@@ -18,6 +18,8 @@
 		E22301F42974267D0078B2A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22301F32974267D0078B2A4 /* ContentView.swift */; };
 		E22301F7297426F80078B2A4 /* ImageGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22301F6297426F80078B2A4 /* ImageGeneratorView.swift */; };
 		E22301F9297427D30078B2A4 /* ImageGeneratorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22301F8297427D30078B2A4 /* ImageGeneratorViewModel.swift */; };
+		E22301FE2975370F0078B2A4 /* Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.08.55.png in Resources */ = {isa = PBXBuildFile; fileRef = E22301FC2975370E0078B2A4 /* Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.08.55.png */; };
+		E22301FF2975370F0078B2A4 /* Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.09.32.png in Resources */ = {isa = PBXBuildFile; fileRef = E22301FD2975370E0078B2A4 /* Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.09.32.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E22301F32974267D0078B2A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E22301F6297426F80078B2A4 /* ImageGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGeneratorView.swift; sourceTree = "<group>"; };
 		E22301F8297427D30078B2A4 /* ImageGeneratorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGeneratorViewModel.swift; sourceTree = "<group>"; };
+		E22301FC2975370E0078B2A4 /* Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.08.55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.08.55.png"; sourceTree = "<group>"; };
+		E22301FD2975370E0078B2A4 /* Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.09.32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.09.32.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +69,13 @@
 		E22301D529732DAD0078B2A4 /* TestAI */ = {
 			isa = PBXGroup;
 			children = (
+				E22301FA297536D50078B2A4 /* Resources */,
 				E22301D629732DAD0078B2A4 /* TestAIApp.swift */,
 				E22301F32974267D0078B2A4 /* ContentView.swift */,
 				E22301F5297426C20078B2A4 /* ImageGenerator */,
 				E22301F0297423810078B2A4 /* Chat */,
 				E22301F2297423950078B2A4 /* Service */,
 				E22301F12974238B0078B2A4 /* Models */,
-				E22301DA29732DAF0078B2A4 /* Assets.xcassets */,
 				E22301DC29732DAF0078B2A4 /* Preview Content */,
 			);
 			path = TestAI;
@@ -117,6 +121,24 @@
 				E22301F8297427D30078B2A4 /* ImageGeneratorViewModel.swift */,
 			);
 			path = ImageGenerator;
+			sourceTree = "<group>";
+		};
+		E22301FA297536D50078B2A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E22301FB297536E10078B2A4 /* Screenshots */,
+				E22301DA29732DAF0078B2A4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E22301FB297536E10078B2A4 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				E22301FC2975370E0078B2A4 /* Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.08.55.png */,
+				E22301FD2975370E0078B2A4 /* Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.09.32.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +207,8 @@
 			files = (
 				E22301DE29732DAF0078B2A4 /* Preview Assets.xcassets in Resources */,
 				E22301DB29732DAF0078B2A4 /* Assets.xcassets in Resources */,
+				E22301FF2975370F0078B2A4 /* Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.09.32.png in Resources */,
+				E22301FE2975370F0078B2A4 /* Simulator Screen Shot - iPhone 13 mini - 2023-01-16 at 13.08.55.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Message: Equatable {
+struct Message {
     var id = UUID().uuidString
     let text: String
     let isOutgoing: Bool

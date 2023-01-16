@@ -20,16 +20,18 @@ struct ChatView: View {
                     enteredText: $enteredText,
                     textFieldPlaceholder: "Enter message...",
                     buttonTitle: "Send"
-                ) {
-                    let message = enteredText
-                    enteredText = ""
-                    
-                    Task {
-                        await viewModel.send(message: message)
-                    }
-                }
+                ) { buttonAction() }
             }
             .navigationTitle("ChatGPT")
+        }
+    }
+    
+    private func buttonAction() {
+        let message = enteredText
+        enteredText = ""
+        
+        Task {
+            await viewModel.send(message: message)
         }
     }
 }

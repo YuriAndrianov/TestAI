@@ -12,45 +12,66 @@ struct ImageGeneratorView: View {
     
     @State private var enteredText = ""
     @State private var isGenerating: Bool = false
+    @State private var prompt: String = ""
     
     var body: some View {
         NavigationView {
             VStack {
-                if let url = viewModel.imageURL {
-                    AsyncImage(url: url) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                            .scaledToFit()
-                            .cornerRadius(12)
-                            .frame(width: UIScreen.main.bounds.width - 32)
-                    } placeholder: {
-                        ProgressView()
-                    }
-                } else {
-                    Text(isGenerating ? "Generating..." : "Generate some image with typing below")
-                        .font(.headline)
-                        .padding()
-                }
+                Spacer()
+                ImageView(imageURL: viewModel.imageURL, isGenerating: isGenerating)
+                Text(prompt)
+                    .font(.headline)
+                    .padding()
                 Spacer()
                 InputView(
                     enteredText: $enteredText,
                     textFieldPlaceholder: "Enter what you want to generate...",
                     buttonTitle: "Generate"
-                ) {
-                    let text = enteredText
-                    enteredText = ""
-                    
-                    isGenerating = true
-                    
-                    Task {
-                        await viewModel.createImage(prompt: text)
-                        isGenerating = false
-                    }
-                }
+                ) { buttonAction() }
             }
             .navigationTitle("Image generator")
         }
+    }
+    
+    private func buttonAction() {
+        let text = enteredText
+        enteredText = ""
+        
+        isGenerating = true
+        prompt = text
+        
+        Task {
+            await viewModel.createImage(prompt: text)
+            isGenerating = false
+        }
+    }
+}
+
+private struct ImageView: View {
+    let imageURL: URL?
+    let isGenerating: Bool
+    
+    var body: some View {
+        if let imageURL {
+            AsyncImage(url: imageURL) { image in
+                image
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fit)
+                    .scaledToFit()
+                    .cornerRadius(12)
+                    .frame(width: UIScreen.main.bounds.width - 32)
+            } placeholder: {
+                ProgressView()
+            }
+        } else {
+            Text(getPlaceholderText())
+                .font(.headline)
+                .padding()
+        }
+    }
+    
+    private func getPlaceholderText() -> String {
+        return isGenerating ? "Generating..." : "Generate some image with typing below"
     }
 }
 

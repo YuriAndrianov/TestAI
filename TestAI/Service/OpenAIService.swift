@@ -10,7 +10,8 @@ import Foundation
 
 final class OpenAIService {
     private enum Constants {
-        static let authToken = "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"
+        // you need your own key to use the app
+        static let authToken = "some auth token from https://beta.openai.com/account/api-keys"
         static let organizationName = "Personal"
         static let maxTokens = 500
     }

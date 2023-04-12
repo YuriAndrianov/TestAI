@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChatView: View {
-    @ObservedObject var viewModel = ChatViewModel()
+    @StateObject var viewModel = ChatViewModel()
     
     @State private var enteredText: String = ""
     

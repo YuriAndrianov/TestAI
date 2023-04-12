@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ImageGeneratorView: View {
-    @ObservedObject var viewModel = ImageGeneratorViewModel()
+    @StateObject var viewModel = ImageGeneratorViewModel()
     
     @State private var enteredText = ""
     @State private var isGenerating: Bool = false
